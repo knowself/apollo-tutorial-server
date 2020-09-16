@@ -32,14 +32,19 @@ module.exports.paginateResults = ({
 module.exports.createStore = () => {
 
   const db = (() => {
-    if (process.env.HEROKU_POSTGRESQL_BRONZE_URL) {
+    if (process.env.HEROKU_POSTGRESQL_ONYX_URL) {
       // the application is executed on Heroku ... use the postgres database
-      return new Sequelize(process.env.HEROKU_POSTGRESQL_BRONZE_URL, {
+      // Parse Heroku connections data for port and host
+      var match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
+
+      console.log(`🚀 app port: ${match[4]}`);
+      console.log(`🚀 app host: ${match[3]}`);
+
+      return new Sequelize(process.env.HEROKU_POSTGRESQL_ONYX_URL, {
         dialect:  'postgres',
         protocol: 'postgres',
         port:     match[4],
-        host:     match[3],
-        logging:  true //false
+        host:     match[3]
       })
     } else {
       // the application is executed on the local machine ... use sqlite
