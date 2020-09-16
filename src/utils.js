@@ -35,7 +35,7 @@ module.exports.createStore = () => {
     if (process.env.HEROKU_POSTGRESQL_ONYX_URL) {
       // the application is executed on Heroku ... use the postgres database
       // Parse Heroku connections data for port and host
-      var match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
+      var match = process.env.HEROKU_POSTGRESQL_ONYX_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
 
       console.log(`🚀 app port: ${match[4]}`);
       console.log(`🚀 app host: ${match[3]}`);
