@@ -1,12 +1,10 @@
-barpass-graphql
+#Apollo SpaceX Graphql Server maintained by Joe Terry
 
-Houses data layer for flutter development of barpass currently hosted on Heroku.
+There is the web client which comes with the tutorial and a Flutter client in development.
 
-https://barpass-server.herokuapp.com/
+This is a statndard tutorial of an Apollo Powered (https://www.apollographql.com/) implementation of GraphQL, an open source specification, for building powerful retrival and storage models of any data sourced from anywhere.
 
-This is an MVP of an Apollo Powered (https://www.apollographql.com/) implementation of GraphQL an open source specification for building powerful retrival and storage models of any data sourced from anywhere.
-
-This GraphQL Server is hosted on Heroku and backed by the Postgresql database (https://www.postgresql.org/), the most advanced open source relational database.
+This GraphQL Server can be hosted on Heroku and backed by the Postgresql database (https://www.postgresql.org/), the most advanced open source relational database.
 
 This same server with NO CHANGES can be run locally on a desktop computer in which case it is backed by the SQLite file-based database which powers every mobile phone from Apple's IOS and Android's Android.
 
