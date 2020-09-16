@@ -1,0 +1,57 @@
+type Query {
+   findNearbyBars {
+
+   } 
+   readBarPass {
+
+   }
+}
+
+type Mutation {
+    createAccount {
+
+    }
+    signIn {
+        
+    }
+    provideBarPass([user]) {
+
+    }
+    logSharedBarPass([user]) {
+
+    }
+}
+
+type user {
+    id: ID!
+    userName: String!
+    email: String!
+    profileImage: String
+    bartrips: [Launch]!
+    token: String
+    createdOn: String!
+    createdBy: String!
+}
+type barpass {
+    barPassID: ID!
+    qrCode: String!
+    belongsTo: user!
+    barVerdict: Boolean!
+    barVisitDate: String!
+    barID: bar!
+}
+
+type bar {
+    barID: ID!
+    barName: String!
+    address: String!
+    barPhone: String!
+    barWebsite: String!
+    hoursOfOps: String!
+    gpsCoords: String!
+}
+
+type notifiedUser {
+    belongsTo: user!
+    shareDates: [date]
+}
