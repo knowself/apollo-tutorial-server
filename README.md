@@ -1,4 +1,4 @@
-#Apollo SpaceX Graphql Server maintained by Joe Terry
+# Apollo SpaceX Graphql Tutorial Server maintained by Joe Terry
 
 There is the web client which comes with the tutorial and a Flutter client in development.
 
